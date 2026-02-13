@@ -26,7 +26,7 @@ app.get('/api/items', (req, res) => {
   likes = likes === undefined || likes === '' ? 1 : Number(likes);
 
   // устанавливаем локаль faker
-  faker.locale = region;
+  faker.setLocale(region);
 
   const items = [];
 
@@ -37,8 +37,8 @@ app.get('/api/items', (req, res) => {
 
     faker.seed(Math.floor(rng() * 100000));
 
-    const artist = faker.person.fullName();
-    const title = faker.music.songName();
+    const artist = faker.name.findName();
+    const title = faker.lorem.words(3);
 
     // лайки (меняются только они)
     const baseLikes = Math.floor(rng() * 1000);

@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: music-store-backend
-    env: node
-    plan: free
-    rootDir: backend
-    buildCommand: npm install
-    startCommand: npm start
